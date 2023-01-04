@@ -1,18 +1,24 @@
-import dotenv from "dotenv";
 import express, { Express, Request, Response } from "express";
 import path from "path";
 import cors from "cors";
+
 import sequelize from "./services/bddConnection";
+import { Person } from "./models/person.model";
 sequelize
   .authenticate()
   .then(() => {
+    (async () => {
+      await sequelize.sync({ force: false }); // ca force le drop table a chaque fois si true
+      const person = new Person({ firstName: "yolo" });
+      person.save();
+      // assyncrone
+    })();
+
     console.log("Connection has been established successfully.");
   })
   .catch((error) => {
     console.error("Unable to connect to the database: ", error);
   });
-
-dotenv.config();
 
 const app: Express = express();
 

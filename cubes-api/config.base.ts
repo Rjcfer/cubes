@@ -1,12 +1,13 @@
 import { Dialect } from "sequelize";
+import { SequelizeOptions } from "sequelize-typescript";
 
 const config = {
   bd: {
-    database: "cubes",
+    database: "cube",
     host: "localhost",
-    port: 3307,
+    port: 3306,
     username: "root",
-    password: "root",
-  },
+    password: "",
+  } as SequelizeOptions,
 };
 export default config;
