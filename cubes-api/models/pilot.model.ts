@@ -10,7 +10,7 @@ import { Person } from "./person.model";
 import { Promo } from "./promo.model";
 
 @Table
-export class Pilots extends Model {
+export class Pilot extends Model {
   @AutoIncrement
   @PrimaryKey
   @Column

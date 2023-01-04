@@ -9,7 +9,7 @@ import {
 } from "sequelize-typescript";
 import { Horaire } from "./horaire.model";
 import { Person } from "./person.model";
-import { Pilots } from "./pilots.model";
+import { Pilot } from "./pilot.model";
 import { Planning } from "./planning.model";
 
 @Table
@@ -27,7 +27,10 @@ export class Promo extends Model {
 
   @HasMany(() => Planning)
   plannings: Planning[];
-  
-  @BelongsToMany(() => Person, () => Pilots)
+
+  @BelongsToMany(() => Person, () => Pilot)
   people: Person[];
+
+  /* @HasMany(() => Person)
+  students: Person[];*/
 }

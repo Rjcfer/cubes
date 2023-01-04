@@ -6,7 +6,7 @@ import { Horaire } from "../models/horaire.model";
 import { Module } from "../models/module.model";
 import { Occupies } from "../models/occupies.model";
 import { Person } from "../models/person.model";
-import { Pilots } from "../models/pilots.model";
+import { Pilot } from "../models/pilot.model";
 import { Planning } from "../models/planning.model";
 import { Promo } from "../models/promo.model";
 import { Qualig } from "../models/qualig.model";
@@ -18,6 +18,18 @@ const sequelize: Sequelize = new Sequelize({
   models: ["./models/**/*.model.js"],
 } as SequelizeOptions);
 
-sequelize.addModels([Acts, Agreg, Horaire, Module, Occupies, Person, Pilots, Planning, Promo, Qualig, Room]);
+sequelize.addModels([
+  Acts,
+  Agreg,
+  Horaire,
+  Module,
+  Occupies,
+  Person,
+  Pilot,
+  Planning,
+  Promo,
+  Qualig,
+  Room,
+]);
 
 export default sequelize;

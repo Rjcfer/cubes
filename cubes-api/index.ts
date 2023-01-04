@@ -8,7 +8,7 @@ sequelize
   .authenticate()
   .then(() => {
     (async () => {
-      await sequelize.sync({ force: false }); // ca force le drop table a chaque fois si true
+      await sequelize.sync({ force: true }); // ca force le drop table a chaque fois si true
       const person = new Person({ firstName: "yolo" });
       person.save();
       // assyncrone

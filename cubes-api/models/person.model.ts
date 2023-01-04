@@ -5,11 +5,12 @@ import {
   AutoIncrement,
   PrimaryKey,
   BelongsToMany,
+  BelongsTo,
 } from "sequelize-typescript";
 import { Acts } from "./acts.model";
 import { Agreg } from "./agreg.model";
 import { Module } from "./module.model";
-import { Pilots } from "./pilots.model";
+import { Pilot } from "./pilot.model";
 import { Planning } from "./planning.model";
 import { Promo } from "./promo.model";
 
@@ -41,12 +42,15 @@ export class Person extends Model {
   @Column
   password: string;
 
-  @BelongsToMany(() => Promo, () => Pilots)
+  @BelongsToMany(() => Promo, () => Pilot)
   promos: Promo[];
-  
+
   @BelongsToMany(() => Planning, () => Acts)
   plannings: Planning[];
 
   @BelongsToMany(() => Module, () => Agreg)
   modules: Module[];
+
+  /* @BelongsTo(() => Promo)
+  studentPromo: Promo;*/
 }
