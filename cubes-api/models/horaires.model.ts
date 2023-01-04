@@ -8,7 +8,7 @@ import {
   } from "sequelize-typescript";
   
   @Table
-  export class Horraire extends Model {
+  export class Horaire extends Model {
     @AutoIncrement
     @PrimaryKey
     @Column
