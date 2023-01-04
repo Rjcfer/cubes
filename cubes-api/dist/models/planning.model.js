@@ -9,43 +9,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Planning = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
-let Person = class Person extends sequelize_typescript_1.Model {
+const person_model_1 = require("./person.model");
+let Planning = class Planning extends sequelize_typescript_1.Model {
 };
 __decorate([
-    sequelize_typescript_1.Column,
     sequelize_typescript_1.AutoIncrement,
     sequelize_typescript_1.PrimaryKey,
-    __metadata("design:type", Number)
-], Person.prototype, "idPerson", void 0);
-__decorate([
-    sequelize_typescript_1.Column,
-    __metadata("design:type", String)
-], Person.prototype, "firstName", void 0);
-__decorate([
-    sequelize_typescript_1.Column,
-    __metadata("design:type", String)
-], Person.prototype, "lastName", void 0);
-__decorate([
-    sequelize_typescript_1.Column,
-    __metadata("design:type", String)
-], Person.prototype, "email", void 0);
-__decorate([
     sequelize_typescript_1.Column,
     __metadata("design:type", Number)
-], Person.prototype, "telephoneNumber", void 0);
+], Planning.prototype, "idPlanning", void 0);
 __decorate([
     sequelize_typescript_1.Column,
     __metadata("design:type", String)
-], Person.prototype, "code", void 0);
+], Planning.prototype, "comment", void 0);
 __decorate([
     sequelize_typescript_1.Column,
-    __metadata("design:type", String)
-], Person.prototype, "type", void 0);
+    __metadata("design:type", Date)
+], Planning.prototype, "startDate", void 0);
 __decorate([
     sequelize_typescript_1.Column,
-    __metadata("design:type", String)
-], Person.prototype, "password", void 0);
-Person = __decorate([
+    __metadata("design:type", Date)
+], Planning.prototype, "endDate", void 0);
+__decorate([
+    (0, sequelize_typescript_1.ForeignKey)(() => person_model_1.Person),
+    sequelize_typescript_1.AllowNull,
+    sequelize_typescript_1.Column,
+    __metadata("design:type", Number)
+], Planning.prototype, "personId", void 0);
+__decorate([
+    (0, sequelize_typescript_1.BelongsTo)(() => person_model_1.Person),
+    __metadata("design:type", person_model_1.Person)
+], Planning.prototype, "person", void 0);
+Planning = __decorate([
     sequelize_typescript_1.Table
-], Person);
+], Planning);
+exports.Planning = Planning;
