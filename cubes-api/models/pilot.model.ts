@@ -14,7 +14,7 @@ import { Person } from "./person.model";
 export class Pilot extends Model {
   @ForeignKey(() => Person)
   @Column
-  idPilot: number;
+  idPerson: number;
   @ForeignKey(() => Promo)
   @Column
   idPromo: number;

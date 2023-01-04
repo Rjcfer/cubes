@@ -18,7 +18,7 @@ __decorate([
     (0, sequelize_typescript_1.ForeignKey)(() => person_model_1.Person),
     sequelize_typescript_1.Column,
     __metadata("design:type", Number)
-], Pilot.prototype, "idPilot", void 0);
+], Pilot.prototype, "idPerson", void 0);
 __decorate([
     (0, sequelize_typescript_1.ForeignKey)(() => Promo),
     sequelize_typescript_1.Column,
