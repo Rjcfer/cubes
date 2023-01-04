@@ -14,8 +14,8 @@ import {
     @Column
     idHorraires: number;
     @Column
-    date_debut: string;
+    date_debut: date;
     @Column
-    date_fin: string;
+    date_fin: date;
   }
   
