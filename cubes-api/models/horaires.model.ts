@@ -14,7 +14,7 @@ import {
     @Column
     idTime: number;
     @Column
-    startDate: date;
+    startDate: Date;
     @Column
-    endDate: date;
+    endDate: Date;
 }
