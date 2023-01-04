@@ -1,4 +1,5 @@
 import { Dialect } from "sequelize";
+import { SequelizeOptions } from "sequelize-typescript";
 
 const config = {
   bd: {
@@ -6,7 +7,7 @@ const config = {
     host: "localhost",
     port: 3307,
     username: "root",
-    password: "",
-  },
+    password: "root",
+  } as SequelizeOptions,
 };
 export default config;
