@@ -1,5 +1,10 @@
-import { AutoIncrement, Column, PrimaryKey, Model, Table, ForeignKey, BelongsTo, AllowNull } from "sequelize-typescript";
+import { AutoIncrement, Column, PrimaryKey, Model, Table, HasOne, BelongsToMany } from "sequelize-typescript";
 import { Person } from "./person.model";
+import { Promo } from "./promo.model";
+import { Room } from "./room.model";
+import { Occupied } from "./occupied.model";
+import { Act } from "./act.model";
+import { modules } from "./modules";
 
 @Table
 export class Planning extends Model {
@@ -17,11 +22,17 @@ export class Planning extends Model {
   @Column
   endDate: Date;
 
-  @ForeignKey(() => Person)
-  @AllowNull
+  @HasOne(() => Promo)
   @Column
-  personId?: number;
+  promoId: number;
 
-  @BelongsTo(() => Person)
-  person: Person;
+  @HasOne(() => modules)
+  @Column
+  moduleId: number;
+
+  @BelongsToMany(() => Room, () => Occupied)
+  rooms: Room[];
+
+  @BelongsToMany(() => Person, () => Act)
+  people: Person[];
 }
