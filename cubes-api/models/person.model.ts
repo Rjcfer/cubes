@@ -5,7 +5,9 @@ import {
   HasMany,
   AutoIncrement,
   PrimaryKey,
+  BelongsToMany,
 } from "sequelize-typescript";
+import { Pilot } from "./pilot.model";
 
 @Table
 export class Person extends Model {
@@ -27,4 +29,6 @@ export class Person extends Model {
   type: "etudiant" | "pilote";
   @Column
   password: string;
+  @BelongsToMany(() => Promo, () => Pilot)
+  promos: Promo[];
 }
