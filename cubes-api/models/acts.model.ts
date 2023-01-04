@@ -3,11 +3,11 @@ import { Person } from "./person.model";
 import { Planning } from "./planning.model";
 
 @Table
-export class Act extends Model {
+export class Acts extends Model {
   @AutoIncrement
   @PrimaryKey
   @Column
-  idAct: number;
+  idActs: number;
 
   @Column
   status: string;

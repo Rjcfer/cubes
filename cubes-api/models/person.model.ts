@@ -2,13 +2,14 @@ import {
   Table,
   Column,
   Model,
-  HasMany,
   AutoIncrement,
   PrimaryKey,
   BelongsToMany,
 } from "sequelize-typescript";
-import { Act } from "./act.model";
-import { Pilot } from "./pilot.model";
+import { Acts } from "./acts.model";
+import { Agreg } from "./agreg.model";
+import { Module } from "./module.model";
+import { Pilots } from "./pilots.model";
 import { Planning } from "./planning.model";
 import { Promo } from "./promo.model";
 
@@ -29,7 +30,7 @@ export class Person extends Model {
   email: string;
 
   @Column
-  telephoneNumber: number;
+  phone: number;
 
   @Column
   code: string;
@@ -40,9 +41,12 @@ export class Person extends Model {
   @Column
   password: string;
 
-  @BelongsToMany(() => Promo, () => Pilot)
+  @BelongsToMany(() => Promo, () => Pilots)
   promos: Promo[];
   
-  @BelongsToMany(() => Planning, () => Act)
+  @BelongsToMany(() => Planning, () => Acts)
   plannings: Planning[];
+
+  @BelongsToMany(() => Module, () => Agreg)
+  modules: Module[];
 }

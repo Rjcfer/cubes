@@ -10,11 +10,11 @@ import { Room } from "./room.model";
 import { Planning } from "./planning.model";
 
 @Table
-export class Occupied extends Model {
+export class Occupies extends Model {
   @AutoIncrement
   @PrimaryKey
   @Column
-  idOccupied: number;
+  idOccupies: number;
 
   @ForeignKey(() => Room)
   @Column

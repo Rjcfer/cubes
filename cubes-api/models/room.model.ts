@@ -6,7 +6,7 @@ import {
   PrimaryKey,
   BelongsToMany,
 } from "sequelize-typescript";
-import { Occupied } from "./occupied.model";
+import { Occupies } from "./occupies.model";
 import { Planning } from "./planning.model";
 
 @Table
@@ -22,6 +22,6 @@ export class Room extends Model {
   @Column
   capacity: number;
 
-  @BelongsToMany(() => Planning, () => Occupied)
+  @BelongsToMany(() => Planning, () => Occupies)
   plannings: Planning[];
 }
