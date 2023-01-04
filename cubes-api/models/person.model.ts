@@ -51,6 +51,6 @@ export class Person extends Model {
   @BelongsToMany(() => Module, () => Agreg)
   modules: Module[];
 
-  /* @BelongsTo(() => Promo)
-  studentPromo: Promo;*/
+  @BelongsTo(() => Promo)
+  studentPromo: Promo;
 }

@@ -31,6 +31,6 @@ export class Promo extends Model {
   @BelongsToMany(() => Person, () => Pilot)
   people: Person[];
 
-  /* @HasMany(() => Person)
-  students: Person[];*/
+  @HasMany(() => Person)
+  students: Person[];
 }
