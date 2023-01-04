@@ -6,6 +6,7 @@ import {
   PrimaryKey,
   BelongsToMany,
   BelongsTo,
+  ForeignKey,
 } from "sequelize-typescript";
 import { Acts } from "./acts.model";
 import { Agreg } from "./agreg.model";
@@ -50,6 +51,10 @@ export class Person extends Model {
 
   @BelongsToMany(() => Module, () => Agreg)
   modules: Module[];
+
+  @ForeignKey(() => Promo)
+  @Column
+  idPromo: number;
 
   @BelongsTo(() => Promo)
   studentPromo: Promo;
