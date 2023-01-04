@@ -1,11 +1,4 @@
 import { Sequelize } from "sequelize-typescript";
-const sequelize = new Sequelize({
-  database: "cubes",
-  host: "localhost",
-  port: 3307,
-  dialect: "mysql",
-  username: "root",
-  password: "root",
-  models: ["./models"],
-});
+import config from "../config";
+const sequelize = new Sequelize(config.bd);
 export default sequelize;
