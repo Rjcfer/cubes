@@ -12,10 +12,10 @@ import {
     @AutoIncrement
     @PrimaryKey
     @Column
-    idHorraires: number;
+    idTime: number;
     @Column
-    date_debut: date;
+    startDate: date;
     @Column
-    date_fin: date;
+    endDate: date;
   }
   
