@@ -17,5 +17,4 @@ import {
     startDate: date;
     @Column
     endDate: date;
-  }
-  
+}
