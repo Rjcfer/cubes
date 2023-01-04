@@ -8,14 +8,16 @@ import {
   } from "sequelize-typescript";
   
   @Table
-  export class Horraire extends Model {
+  export class modules extends Model {
     @AutoIncrement
     @PrimaryKey
     @Column
-    idHorraires: number;
+    idModules: number;
     @Column
-    date_debut: string;
+    label: string;
     @Column
-    date_fin: string;
+    level: string;
+    @Column
+    dayNumber: number;
   }
   
