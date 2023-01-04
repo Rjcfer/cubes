@@ -9,7 +9,6 @@ import {
   
   @Table
   export class modules extends Model {
-    @AutoIncrement
     @PrimaryKey
     @Column
     idModules: number;
