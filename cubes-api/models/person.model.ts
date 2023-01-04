@@ -8,6 +8,7 @@ import {
   BelongsToMany,
 } from "sequelize-typescript";
 import { Pilot } from "./pilot.model";
+import { Promo } from "./promo.model";
 
 @Table
 export class Person extends Model {

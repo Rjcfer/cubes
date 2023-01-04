@@ -9,6 +9,7 @@ import {
   ForeignKey,
 } from "sequelize-typescript";
 import { Person } from "./person.model";
+import { Promo } from "./promo.model";
 
 @Table
 export class Pilot extends Model {
