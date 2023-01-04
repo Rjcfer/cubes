@@ -7,6 +7,7 @@ const config = {
         port: 3307,
         username: "root",
         password: "root",
+        logging: console.log,
     },
 };
 exports.default = config;
