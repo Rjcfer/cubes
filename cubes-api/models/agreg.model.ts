@@ -5,7 +5,6 @@ import {
     AutoIncrement,
     PrimaryKey,
     ForeignKey,
-    BelongsTo,
   } from "sequelize-typescript";
 import { Module } from "./module.model";
 import { Person } from "./person.model";
