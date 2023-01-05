@@ -14,7 +14,7 @@ export class Horaire extends Model {
   @AutoIncrement
   @PrimaryKey
   @Column
-  idHoraire: number;
+  idHourly: number;
 
   @Column
   startDate: Date;

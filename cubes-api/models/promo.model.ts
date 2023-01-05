@@ -23,7 +23,7 @@ export class Promo extends Model {
   name: string;
 
   @HasMany(() => Horaire)
-  horaires: Horaire[];
+  hourly: Horaire[];
 
   @HasMany(() => Planning)
   plannings: Planning[];
