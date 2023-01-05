@@ -23,14 +23,18 @@ export class Promo extends Model {
   name: string;
 
   @HasMany(() => Horaire)
+  @Column
   hourly: Horaire[];
 
   @HasMany(() => Planning)
+  @Column
   plannings: Planning[];
 
   @BelongsToMany(() => Person, () => Pilot)
+  @Column
   people: Person[];
 
   @HasMany(() => Person)
+  @Column
   students: Person[];
 }

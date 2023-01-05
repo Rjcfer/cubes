@@ -23,8 +23,10 @@ export class Horaire extends Model {
   endDate: Date;
 
   @ForeignKey(() => Promo)
+  @Column
   idPromo: number;
 
   @BelongsTo(() => Promo)
+  @Column
   promo: Promo;
 }
