@@ -6,19 +6,22 @@ import {
   PrimaryKey,
   ForeignKey,
 } from "sequelize-typescript";
+import { Module } from "./module.model";
 import { Person } from "./person.model";
-import { Promo } from "./promo.model";
 
 @Table
-export class Pilot extends Model {
+export class Agreg extends Model {
   @AutoIncrement
   @PrimaryKey
   @Column
-  idPilot: number;
+  idAgreg: number;
 
-  @ForeignKey(() => Promo)
   @Column
-  idPromo: number;
+  status: string;
+
+  @ForeignKey(() => Module)
+  @Column
+  idModule: number;
 
   @ForeignKey(() => Person)
   @Column

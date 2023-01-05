@@ -5,22 +5,26 @@ import {
   AutoIncrement,
   PrimaryKey,
   ForeignKey,
+  BelongsTo,
 } from "sequelize-typescript";
-import { Person } from "./person.model";
 import { Promo } from "./promo.model";
-
+  
 @Table
-export class Pilot extends Model {
+export class Horaire extends Model {
   @AutoIncrement
   @PrimaryKey
   @Column
-  idPilot: number;
+  idHourly: number;
+
+  @Column
+  startDate: Date;
+
+  @Column
+  endDate: Date;
 
   @ForeignKey(() => Promo)
-  @Column
   idPromo: number;
 
-  @ForeignKey(() => Person)
-  @Column
-  idPerson: number;
+  @BelongsTo(() => Promo)
+  promo: Promo;
 }

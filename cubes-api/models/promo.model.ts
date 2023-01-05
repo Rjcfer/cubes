@@ -2,13 +2,15 @@ import {
   Table,
   Column,
   Model,
-  HasMany,
   AutoIncrement,
   PrimaryKey,
   BelongsToMany,
+  HasMany,
 } from "sequelize-typescript";
+import { Horaire } from "./horaire.model";
 import { Person } from "./person.model";
 import { Pilot } from "./pilot.model";
+import { Planning } from "./planning.model";
 
 @Table
 export class Promo extends Model {
@@ -16,8 +18,19 @@ export class Promo extends Model {
   @PrimaryKey
   @Column
   idPromo: number;
+
   @Column
   name: string;
+
+  @HasMany(() => Horaire)
+  hourly: Horaire[];
+
+  @HasMany(() => Planning)
+  plannings: Planning[];
+
   @BelongsToMany(() => Person, () => Pilot)
-  promos: Promo[];
+  people: Person[];
+
+  @HasMany(() => Person)
+  students: Person[];
 }
