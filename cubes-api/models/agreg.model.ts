@@ -2,20 +2,32 @@ import {
     Table,
     Column,
     Model,
-    HasMany,
     AutoIncrement,
     PrimaryKey,
+    ForeignKey,
+    BelongsTo,
   } from "sequelize-typescript";
-  
+import { Module } from "./module.model";
+import { Person } from "./person.model";
+    
   @Table
-  export class Horraire extends Model {
+  export class Agreg extends Model {
     @AutoIncrement
     @PrimaryKey
     @Column
-    idHorraires: number;
+    idAgreg: number;
+  
     @Column
-    date_debut: string;
+    statut: string;
+  
+    @ForeignKey(() => Module)
     @Column
-    date_fin: string;
+    idModule: number;
+
+    @ForeignKey(() => Person)
+    @Column
+    idPerson: number;
+  
+    
   }
   
