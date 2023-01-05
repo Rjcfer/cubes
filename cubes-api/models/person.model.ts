@@ -27,7 +27,7 @@ export class Person extends Model {
   @Column
   code: string;
   @Column
-  type: "etudiant" | "pilote";
+  type: "etudiant" | "pilote" | "intervenat";
   @Column
   password: string;
   @BelongsToMany(() => Promo, () => Pilot)
