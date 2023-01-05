@@ -3,11 +3,12 @@ import { SequelizeOptions } from "sequelize-typescript";
 
 const config = {
   bd: {
-    database: "cube",
+    database: "yourBDD",
     host: "localhost",
     port: 3306,
     username: "root",
     password: "",
+    logging: console.log,
   } as SequelizeOptions,
 };
 export default config;
