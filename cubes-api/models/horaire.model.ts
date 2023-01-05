@@ -8,7 +8,7 @@ import {
   BelongsTo,
 } from "sequelize-typescript";
 import { Promo } from "./promo.model";
-  
+
 @Table
 export class Horaire extends Model {
   @AutoIncrement
@@ -27,6 +27,5 @@ export class Horaire extends Model {
   idPromo: number;
 
   @BelongsTo(() => Promo)
-  @Column
   promo: Promo;
 }
