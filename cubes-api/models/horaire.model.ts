@@ -27,6 +27,5 @@ export class Horaire extends Model {
   idPromo: number;
 
   @BelongsTo(() => Promo)
-  @Column
   promo: Promo;
 }

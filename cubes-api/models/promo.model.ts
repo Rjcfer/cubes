@@ -31,7 +31,6 @@ export class Promo extends Model {
   plannings: Planning[];
 
   @BelongsToMany(() => Person, () => Pilot)
-  @Column
   people: Person[];
 
   @HasMany(() => Person)
