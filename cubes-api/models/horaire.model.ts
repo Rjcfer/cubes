@@ -29,3 +29,5 @@ export class Horaire extends Model {
   @BelongsTo(() => Promo)
   promo: Promo;
 }
+
+
